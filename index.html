@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff5ef">
+<title>For Prishtee ♡</title>
+<style>
+:root{--cream:#fff8f1;--pink:#f7c8d4;--rose:#d96f91;--ink:#60434c;--muted:#987b82;--card:#fffdfb;--line:#f1dbe0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;background:radial-gradient(circle at 10% 5%,#ffe7ee 0,transparent 25%),radial-gradient(circle at 90% 30%,#fff0d9 0,transparent 28%),var(--cream);overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid #c85b80;outline-offset:4px}
+.wrap{width:min(100% - 30px,880px);margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;color:var(--muted);font-size:.88rem}
+.logo{font-weight:900;letter-spacing:.04em;color:var(--rose)}
+.pill{border:1px solid var(--line);border-radius:99px;padding:8px 12px;background:#ffffff9c}
+.hero{min-height:78vh;display:grid;place-items:center;text-align:center;padding:30px 0 55px;position:relative}
+.eyebrow{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);font-weight:800}
+h1{font-size:clamp(2.8rem,12vw,6rem);line-height:.98;letter-spacing:-.065em;margin:15px 0;color:#774c5a}
+h1 span{color:var(--rose);font-family:Georgia,serif;font-weight:500;font-style:italic}
+.sub{max-width:510px;margin:0 auto 25px;color:var(--muted);line-height:1.7}
+.primary,.secondary{border:0;border-radius:99px;padding:13px 20px;box-shadow:0 8px 22px #d96f9126;transition:transform .2s,box-shadow .2s}
+.primary{background:var(--rose);color:white;font-weight:800}
+.secondary{background:#fff;color:var(--rose);border:1px solid var(--line)}
+.primary:hover,.secondary:hover{transform:translateY(-2px);box-shadow:0 12px 28px #d96f9133}
+.hero-heart{font-size:2rem;display:block;margin-bottom:12px;animation:heartbeat 2s infinite}
+.section{padding:40px 0 60px}
+.section-head{text-align:center;margin-bottom:25px}
+h2{font-size:clamp(1.8rem,7vw,3rem);margin:8px 0;letter-spacing:-.04em}
+.note{color:var(--muted);line-height:1.65}
+.envelope-area{display:grid;place-items:center;perspective:1000px;padding:15px 0 25px}
+.envelope{position:relative;width:min(82vw,330px);height:210px;border:0;background:transparent;filter:drop-shadow(0 18px 18px #a85f7020);transition:transform .4s}
+.envelope:hover{transform:translateY(-4px) rotateX(2deg)}
+.env-back{position:absolute;inset:0;background:#f4b9ca;border-radius:12px}
+.env-letter{position:absolute;left:8%;width:84%;height:82%;bottom:7%;background:#fffdf9;border-radius:7px;display:grid;place-items:center;padding:15px;transition:transform .8s cubic-bezier(.2,.8,.2,1);color:#9c5b71;font-family:Georgia,serif;font-size:1.1rem}
+.env-front{position:absolute;inset:0;background:#f8cbd7;clip-path:polygon(0 0,50% 57%,100% 0,100% 100%,0 100%);border-radius:12px}
+.env-flap{position:absolute;inset:0;background:#e99bb4;clip-path:polygon(0 0,100% 0,50% 57%);transform-origin:top;transition:transform .65s;z-index:3}
+.envelope.open .env-flap{transform:rotateX(180deg);z-index:0}
+.envelope.open .env-letter{transform:translateY(-82px);transition-delay:.2s}
+.env-sticker{position:absolute;z-index:4;left:calc(50% - 18px);top:45%;font-size:2rem;transition:opacity .2s}
+.envelope.open .env-sticker{opacity:0}
+.small-hint{font-size:.85rem;color:var(--muted);margin-top:10px}
+.letter-card{background:var(--card);border:1px solid var(--line);border-radius:25px;padding:clamp(22px,6vw,42px);box-shadow:0 18px 55px #86505c10;transform-style:preserve-3d}
+.letter-card p{line-height:1.9;margin:0 0 15px}
+.signature{font-family:Georgia,serif;font-style:italic;font-size:1.3rem;color:var(--rose);margin-top:20px}
+.hidden{display:none!important}
+.gallery-shell{position:relative;overflow:hidden}
+.gallery-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:8px 3px 18px}
+.gallery-track::-webkit-scrollbar{display:none}
+.photo-card{scroll-snap-align:center;flex:0 0 min(78vw,270px);background:white;padding:10px 10px 16px;border-radius:13px;box-shadow:0 10px 25px #79505b12;transform:rotate(-1deg)}
+.photo-card:nth-child(even){transform:rotate(1.5deg)}
+.photo-frame{height:300px;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#ffe1e9,#fff0d9);display:grid;place-items:center;text-align:center;color:#ad7384;padding:12px}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-frame .placeholder{font-size:3rem}
+.caption{text-align:center;padding-top:12px;font-family:Georgia,serif;color:#8e596b}
+.gallery-controls{display:flex;gap:10px;justify-content:center}
+.music-card{display:flex;gap:16px;align-items:center;background:#fffdfb;border:1px solid var(--line);padding:18px;border-radius:22px}
+.vinyl{width:66px;height:66px;flex:0 0 66px;border-radius:50%;background:repeating-radial-gradient(circle,#503a46 0 3px,#342833 4px 7px);display:grid;place-items:center;color:#f6c6d4;animation:spin 6s linear infinite;animation-play-state:paused}
+.vinyl.playing{animation-play-state:running}
+.music-info{flex:1;min-width:0}
+.music-info strong{display:block;margin-bottom:4px}
+audio{width:100%;height:35px;margin-top:10px;accent-color:var(--rose)}
+.gift-stage{perspective:900px;text-align:center;padding:12px}
+.gift-button{background:none;border:0;display:block;margin:0 auto;perspective:700px}
+.gift{width:150px;height:120px;position:relative;margin:10px auto 20px;transform-style:preserve-3d;transition:transform .7s}
+.gift-base{position:absolute;bottom:0;left:15px;width:120px;height:80px;background:#ef9db5;border-radius:8px;box-shadow:inset -10px 0 #d97999}
+.gift-lid{position:absolute;top:18px;left:5px;width:140px;height:28px;border-radius:7px;background:#f7bfd0;z-index:2;transition:transform .7s;transform-origin:left bottom}
+.gift-ribbon{position:absolute;left:68px;bottom:0;width:16px;height:80px;background:#fff0c9;z-index:1}
+.gift-bow{position:absolute;top:0;left:56px;font-size:2.4rem;color:#fff0c9;z-index:3}
+.gift-button.open .gift-lid{transform:translate(18px,-48px) rotate(-25deg)}
+.gift-button.open .gift{transform:rotateY(12deg) translateY(-5px)}
+.gift-message{max-width:560px;margin:20px auto 0;padding:24px;background:#fffdfb;border:1px solid var(--line);border-radius:22px;line-height:1.8;animation:pop .45s both}
+.footer{text-align:center;padding:25px 0 45px;color:var(--muted);font-size:.85rem}
+.floaties{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:10}
+.floaty{position:absolute;bottom:-40px;opacity:0;animation:floatUp linear forwards;filter:drop-shadow(0 2px 3px #d96f9120)}
+.sparkle{position:fixed;pointer-events:none;z-index:20;animation:spark .8s ease-out forwards}
+@keyframes floatUp{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.8}100%{transform:translateY(-115vh) rotate(260deg);opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes spark{0%{transform:scale(.2) rotate(0);opacity:0}30%{opacity:1}100%{transform:scale(1.5) rotate(90deg);opacity:0}}
+@media(min-width:700px){.hero{min-height:78vh}.photo-card{flex-basis:260px}.photo-frame{height:310px}.section{padding:55px 0 75px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<div class="wrap">
+<nav><div class="logo">little birthday universe ♡</div><div class="pill">26 · 10 · 2026</div></nav>
+<header class="hero" id="home">
+  <div>
+    <span class="hero-heart">♡</span>
+    <div class="eyebrow">a tiny corner of the internet, just for</div>
+    <h1>Happy Birthday,<br><span>Prishtee!</span></h1>
+    <p class="sub">15 looks pretty magical already. Here's a little bundle of smiles, sweet words and tiny surprises made just for you. 🌷</p>
+    <button class="primary" onclick="document.querySelector('#envelope-section').scrollIntoView({behavior:'smooth'})">Open your surprise ↓</button>
+  </div>
+</header>
+
+<section class="section" id="envelope-section">
+  <div class="section-head"><div class="eyebrow">first little surprise</div><h2>A letter for you 💌</h2><p class="note">Tap the envelope to open it.</p></div>
+  <div class="envelope-area">
+    <button class="envelope" id="envelope" aria-label="Open birthday envelope" aria-expanded="false">
+      <div class="env-back"></div><div class="env-letter">a little note<br>for someone lovely ♡</div><div class="env-front"></div><div class="env-flap"></div><div class="env-sticker">♡</div>
+    </button>
+    <div class="small-hint">psst… go on, tap it ✨</div>
+  </div>
+  <article class="letter-card hidden" id="letter">
+    <p>Dear Prishtee, 🌷</p>
+    <p>Happy 15th birthday! I hope this new chapter brings you so many reasons to smile, lots of peaceful days, fun little adventures, and people who appreciate the sweet and caring person you are.</p>
+    <p>Thank you for being there and for bringing your own lovely energy wherever you go. I hope you always have people around you who support you, make you laugh, and remind you how much you matter.</p>
+    <p>Keep being your kind, wonderful self, keep chasing the things that make you happy, and never feel like you have to stop being you. You deserve a year full of good surprises and happy moments. 💗</p>
+    <p>Have the cutest 15th birthday ever! 🎂</p>
+    <div class="signature">— from your friend ♡</div>
+  </article>
+</section>
+
+<section class="section" id="gallery">
+  <div class="section-head"><div class="eyebrow">little snapshots</div><h2>Your mini gallery 📸</h2><p class="note">Swipe sideways to explore. Replace these sample cards with her photos.</p></div>
+  <div class="gallery-shell"><div class="gallery-track" id="galleryTrack">
+    <div class="photo-card"><div class="photo-frame"><div><div class="placeholder">🌸</div><b>Add photo 1</b><br><small>assets/photo1.jpg</small></div></div><div class="caption">pretty little moments</div></div>
+    <div class="photo-card"><div class="photo-frame"><div><div class="placeholder">🦋</div><b>Add photo 2</b><br><small>assets/photo2.jpg</small></div></div><div class="caption">main character energy</div></div>
+    <div class="photo-card"><div class="photo-frame"><div><div class="placeholder">🎀</div><b>Add photo 3</b><br><small>assets/photo3.jpg</small></div></div><div class="caption">a little extra sparkle</div></div>
+    <div class="photo-card"><div class="photo-frame"><div><div class="placeholder">🌷</div><b>Add photo 4</b><br><small>assets/photo4.jpg</small></div></div><div class="caption">birthday girl era</div></div>
+  </div></div>
+  <div class="gallery-controls"><button class="secondary" id="prev">← Back</button><button class="secondary" id="next">Next →</button></div>
+</section>
+
+<section class="section" id="music">
+  <div class="section-head"><div class="eyebrow">press play for a vibe</div><h2>A song for your day 🎧</h2><p class="note">Add a song file you’re allowed to share. Music starts only when you press play.</p></div>
+  <div class="music-card"><div class="vinyl" id="vinyl">♡</div><div class="music-info"><strong>Prishtee’s birthday soundtrack</strong><span class="note">one song, extra happy vibes</span><audio id="audio" controls preload="metadata"><source src="assets/favourite-song.mp3" type="audio/mpeg">Your browser does not support audio.</audio><div class="small-hint">Put your audio file in the assets folder and name it <b>favourite-song.mp3</b>.</div></div></div>
+</section>
+
+<section class="section" id="gift">
+  <div class="section-head"><div class="eyebrow">one last tiny surprise</div><h2>A gift just for you 🎁</h2><p class="note">Tap the box. It’s full of good wishes.</p></div>
+  <div class="gift-stage"><button class="gift-button" id="giftButton" aria-label="Open the gift box" aria-expanded="false"><div class="gift"><div class="gift-base"></div><div class="gift-ribbon"></div><div class="gift-lid"></div><div class="gift-bow">♡</div></div></button>
+  <div class="gift-message hidden" id="giftMessage"><div style="font-size:2rem">🌟 💗 🌟</div><b>Your birthday wish:</b><br>May 15 bring you confidence to try new things, courage to be yourself, laughter that makes your cheeks hurt, and friends who cheer you on. May the little things turn into your favourite memories. You deserve a lovely year ahead. Happy birthday, Prishtee! 🎂🌷</div></div>
+</section>
+<footer class="footer">made with lots of pink, sparkles & friendship ♡<br><a href="#home" style="color:var(--rose)">back to the top ↑</a></footer>
+</div>
+<script>
+const envelope=document.getElementById('envelope'), letter=document.getElementById('letter');
+envelope.addEventListener('click',()=>{const opened=envelope.classList.toggle('open');envelope.setAttribute('aria-expanded',opened);letter.classList.toggle('hidden',!opened);if(opened){setTimeout(()=>letter.scrollIntoView({behavior:'smooth',block:'center'}),450);burst(16)}});
+const giftButton=document.getElementById('giftButton'),giftMessage=document.getElementById('giftMessage');
+giftButton.addEventListener('click',()=>{const opened=giftButton.classList.toggle('open');giftButton.setAttribute('aria-expanded',opened);giftMessage.classList.toggle('hidden',!opened);if(opened)burst(30)});
+const track=document.getElementById('galleryTrack');
+document.getElementById('next').addEventListener('click',()=>track.scrollBy({left:290,behavior:'smooth'}));
+document.getElementById('prev').addEventListener('click',()=>track.scrollBy({left:-290,behavior:'smooth'}));
+const audio=document.getElementById('audio'),vinyl=document.getElementById('vinyl');
+audio.addEventListener('play',()=>vinyl.classList.add('playing'));audio.addEventListener('pause',()=>vinyl.classList.remove('playing'));audio.addEventListener('ended',()=>vinyl.classList.remove('playing'));
+function burst(n){for(let i=0;i<n;i++){const s=document.createElement('span');s.className='sparkle';s.textContent=['✦','✧','♡','✿','✨'][Math.floor(Math.random()*5)];s.style.left=(10+Math.random()*80)+'vw';s.style.top=(15+Math.random()*65)+'vh';s.style.fontSize=(12+Math.random()*18)+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),900)}}
+const floaties=document.getElementById('floaties');
+function floatFlower(){const f=document.createElement('span');f.className='floaty';f.textContent=['🌸','✿','♡','🌷','✨'][Math.floor(Math.random()*5)];f.style.left=Math.random()*100+'vw';f.style.fontSize=(14+Math.random()*15)+'px';f.style.animationDuration=(9+Math.random()*8)+'s';floaties.appendChild(f);setTimeout(()=>f.remove(),18000)}
+for(let i=0;i<8;i++)setTimeout(floatFlower,i*650);setInterval(floatFlower,1800);
+document.addEventListener('pointerdown',e=>{if(Math.random()>.35)return;const s=document.createElement('span');s.className='sparkle';s.textContent='✧';s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';s.style.fontSize='20px';document.body.appendChild(s);setTimeout(()=>s.remove(),850)});
+</script>
+</body>
+</html>
